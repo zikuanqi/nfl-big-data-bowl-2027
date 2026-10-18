@@ -1,0 +1,554 @@
+
+[    0.0s] ==== load games.csv ====
+
+===== games.csv | shape (1002, 7) =====
+columns: game_id, game_key, season, season_type, week, home_team_abbr, visitor_team_abbr
+-- missing values: none
+-- numeric describe:
+            game_id  game_key   season     week
+count  1.002000e+03   1002.00  1002.00  1002.00
+mean   2.024182e+09  59674.50  2024.00     8.80
+std    8.557928e+05    290.17     0.82     5.92
+min    2.023080e+09  59173.00  2023.00     0.00
+25%    2.023121e+09  59423.25  2023.00     3.00
+50%    2.024103e+09  59674.50  2024.00     8.00
+75%    2.025092e+09  59925.75  2025.00    14.00
+max    2.026021e+09  60176.00  2025.00    23.00
+-- head(2):
+      game_id  game_key  season season_type  week home_team_abbr visitor_team_abbr
+0  2023090700     59173    2023         REG     1             KC               DET
+1  2023091000     59174    2023         REG     1            ATL               CAR
+
+[    0.0s] ==== load players.csv ====
+
+===== players.csv | shape (510, 10) =====
+columns: nfl_id, display_name, draft_year, nfl_position, birth_date, college_name, college_conference, draft_round, draft_pick_within_round, draft_overall_pick
+-- missing values (3 cols):
+draft_round                127
+draft_pick_within_round    127
+draft_overall_pick         127
+-- numeric describe:
+         nfl_id  draft_year  draft_round  draft_pick_within_round  draft_overall_pick
+count    510.00      510.00       383.00                   383.00              383.00
+mean   57331.32     2024.03         4.10                    19.48              126.54
+std      979.51        0.81         1.91                    11.18               72.20
+min    55867.00     2023.00         1.00                     1.00                3.00
+25%    56273.50     2023.00         2.00                    10.00               63.50
+50%    57290.00     2024.00         4.00                    20.00              122.00
+75%    58302.75     2025.00         6.00                    28.50              186.00
+max    59278.00     2025.00         7.00                    43.00              257.00
+-- head(2):
+   nfl_id   display_name  draft_year nfl_position  birth_date college_name       college_conference  draft_round  draft_pick_within_round  draft_overall_pick
+0   55867  Will Anderson        2023           DE  2001-09-02      Alabama  Southeastern Conference          1.0                      3.0                 3.0
+1   55870  Paris Johnson        2023            T  2001-07-31   Ohio State       Big Ten Conference          1.0                      6.0                 6.0
+
+[    0.0s] ==== load combine_results.csv ====
+
+===== combine_results.csv | shape (510, 18) =====
+columns: draft_year, nfl_id, combine_position, combine_height, combine_weight, hand_size, arm_length, wing_span, ten_yd_split, forty, vertical, broad_jump, three_cone, short_shuttle, bench_reps, ngs_athleticism_score, ngs_college_production_score, ngs_final_score
+-- missing values (9 cols):
+three_cone                      330
+bench_reps                      318
+short_shuttle                   309
+broad_jump                       87
+forty                            86
+ten_yd_split                     85
+vertical                         72
+ngs_college_production_score      1
+ngs_final_score                   1
+-- numeric describe:
+       draft_year    nfl_id  combine_height  combine_weight  hand_size  arm_length  wing_span  ten_yd_split   forty  vertical  broad_jump  three_cone  short_shuttle  bench_reps  ngs_athleticism_score  ngs_college_production_score  ngs_final_score
+count      510.00    510.00          510.00          510.00     510.00      510.00     510.00        425.00  424.00    438.00      423.00      180.00         201.00      192.00                 510.00                        509.00           509.00
+mean      2024.03  57331.32           74.58          248.38       9.57       32.41      78.47          1.63    4.73     33.81      118.15        7.31           4.47       21.72                  72.45                         67.48            70.33
+std          0.81    979.51            2.63           53.25       0.60        1.42       3.27          0.12    0.31      4.14        9.06        0.39           0.25        5.72                  10.61                          8.32             7.53
+min       2023.00  55867.00           68.12          154.00       8.00       28.50      69.00          1.46    4.28     23.00       93.00        6.57           3.93        8.00                  51.00                         50.00            52.00
+25%       2023.00  56273.50           72.62          198.00       9.12       31.38      76.25          1.54    4.47     31.00      111.00        7.00           4.28       17.00                  65.00                         61.00            65.00
+50%       2024.00  57290.00           75.00          245.50       9.50       32.38      78.50          1.59    4.62     34.00      120.00        7.29           4.45       22.00                  73.00                         66.00            70.00
+75%       2025.00  58302.75           76.50          304.00      10.00       33.50      80.84          1.74    5.01     37.00      125.00        7.62           4.68       26.00                  80.00                         73.00            75.00
+max       2025.00  59278.00           80.62          374.00      11.62       36.88      88.25          1.96    5.48     44.00      138.00        8.19           5.03       39.00                  99.00                         99.00            94.00
+-- head(2):
+   draft_year  nfl_id combine_position  combine_height  combine_weight  hand_size  arm_length  wing_span  ten_yd_split  forty  vertical  broad_jump  three_cone  short_shuttle  bench_reps  ngs_athleticism_score  ngs_college_production_score  ngs_final_score
+0        2023   56040               TE          77.875             245      10.00      32.250      79.75          1.60   4.84      38.5       125.0         NaN            NaN         NaN                     60                           NaN              NaN
+1        2023   56010               DB          70.625             191       8.75      29.625      72.25          1.58   4.59      33.5       116.0         NaN            NaN        23.0                     60                          77.0             74.0
+
+[    0.0s] ==== load player_career_successes.csv ====
+
+===== player_career_successes.csv | shape (510, 9) =====
+columns: nfl_id, career_offensive_snaps, career_defensive_snaps, career_special_teams_snaps, career_games_active, career_games_started, ap_all_pro_1st_team, ap_all_pro_2nd_team, pro_bowl_original_ballot
+-- missing values: none
+-- numeric describe:
+         nfl_id  career_offensive_snaps  career_defensive_snaps  career_special_teams_snaps  career_games_active  career_games_started  ap_all_pro_1st_team  ap_all_pro_2nd_team  pro_bowl_original_ballot
+count    510.00                  510.00                  510.00                      510.00               510.00                510.00               510.00               510.00                    510.00
+mean   57331.32                  327.42                  234.31                      113.50                21.72                  7.85                 0.01                 0.00                      0.03
+std      979.51                  632.40                  492.12                      156.19                16.29                 11.47                 0.11                 0.06                      0.20
+min    55867.00                    0.00                    0.00                        0.00                 0.00                  0.00                 0.00                 0.00                      0.00
+25%    56273.50                    0.00                    0.00                        5.00                 6.25                  0.00                 0.00                 0.00                      0.00
+50%    57290.00                    0.00                    0.00                       53.00                17.00                  2.00                 0.00                 0.00                      0.00
+75%    58302.75                  361.75                  220.50                      147.75                34.00                 12.00                 0.00                 0.00                      0.00
+max    59278.00                 3303.00                 2666.00                      957.00                51.00                 50.00                 1.00                 1.00                      2.00
+-- head(2):
+   nfl_id  career_offensive_snaps  career_defensive_snaps  career_special_teams_snaps  career_games_active  career_games_started  ap_all_pro_1st_team  ap_all_pro_2nd_team  pro_bowl_original_ballot
+0   55867                       0                    1884                          92                   51                    44                    1                    0                         1
+1   55870                    2802                       0                         169                   47                    43                    0                    0                         0
+
+[    0.1s] ==== cross-file analysis ====
+merged players+combine+career shape: (510, 34)
+position distribution:
+nfl_position
+WR     106
+CB      60
+G       51
+T       50
+DT      47
+TE      42
+DE      36
+OLB     30
+SS      28
+FS      25
+C       20
+NT       5
+DB       5
+ILB      2
+RB       1
+MLB      1
+FB       1
+draft_year distribution:
+draft_year
+2023    160
+2024    177
+2025    173
+career target columns distribution:
+-- career_games_active:
+career_games_active
+0      88
+1       8
+2       7
+3       4
+4       7
+5       6
+6       8
+7       2
+8       4
+9       2
+10      2
+11      3
+12      3
+13      5
+14      1
+15      5
+16      6
+17    115
+18      3
+19      2
+20      3
+21      6
+22      4
+23      4
+24      5
+25      4
+26      9
+27      2
+28      3
+29      9
+-- career_games_started:
+career_games_started
+0     208
+1      38
+2      23
+3      17
+4      16
+5      15
+6      13
+7      13
+8      10
+9      10
+10     10
+11      6
+12      8
+13      7
+14      8
+15      6
+16      5
+17      8
+18      8
+19      2
+20      8
+21      8
+22      3
+23      2
+24      3
+25      1
+26      4
+27      1
+28      1
+29      3
+-- pro_bowl_original_ballot:
+pro_bowl_original_ballot
+0    499
+1      8
+2      3
+-- ap_all_pro_1st_team:
+ap_all_pro_1st_team
+0    504
+1      6
+-- ap_all_pro_2nd_team:
+ap_all_pro_2nd_team
+0    508
+1      2
+correlation: combine metrics vs career metrics:
+                            combine_height  combine_weight  hand_size  arm_length  wing_span  ten_yd_split  forty  vertical  broad_jump  three_cone  short_shuttle  bench_reps  ngs_athleticism_score  ngs_college_production_score  ngs_final_score
+career_offensive_snaps                0.17            0.18       0.13        0.11       0.10          0.15   0.16     -0.05       -0.12        0.03          -0.03        0.27                   0.19                          0.38             0.42
+career_defensive_snaps               -0.18           -0.15      -0.10       -0.08      -0.11         -0.17  -0.20      0.18        0.19       -0.13          -0.14       -0.18                   0.03                          0.18             0.18
+career_special_teams_snaps           -0.13           -0.17      -0.06       -0.06      -0.12         -0.20  -0.21      0.16        0.18       -0.23          -0.21       -0.19                  -0.01                          0.05             0.07
+career_games_active                  -0.06           -0.04      -0.02       -0.00      -0.07         -0.07  -0.08      0.13        0.13       -0.08          -0.14        0.04                   0.13                          0.32             0.34
+career_games_started                  0.06            0.09       0.08        0.06       0.04          0.03   0.02      0.04       -0.01       -0.01          -0.08        0.16                   0.20                          0.47             0.51
+
+[    0.1s] ==== load player_play.csv (full) ====
+shape: (314197, 64)
+unique games: 1001, unique plays: 4931, unique players: 497
+lined_up_position value_counts:
+lined_up_position
+G                48507
+T                42851
+EDGE             38398
+CB               35017
+INTERIOR_LINE    30301
+WR               28077
+HIGH_SAFETY      25608
+SLOT_WR          18755
+C                14959
+SLOT_CB          14537
+TE                6803
+OLB               6362
+MLB               1824
+NaN               1383
+RB                 320
+BOX_SAFETY         266
+FB                 228
+EXTRA_OL             1
+down value_counts:
+down
+0       961
+1    130667
+2    103495
+3     71072
+4      8002
+quarter value_counts:
+quarter
+1    67688
+2    87953
+3    69657
+4    87462
+5     1437
+missing per column (top 15):
+rush_yards                    314175
+fumble                        314124
+fumble_lost                   314124
+recovered_fumble              311983
+quick_pressure                310434
+time_to_pressure              310393
+time_to_qb_hurry              310318
+time_to_pressure_allowed      309227
+rec_yards                     307937
+yards_after_catch             307937
+expected_yards_after_catch    305221
+assist                        302301
+tackle                        302301
+caused_forced_fumble          302301
+tackle_for_loss               302301
+season coverage (join games not needed, use play_id frequency):
+team_abbr value_counts (top 35):
+team_abbr
+HOU    17362
+ARI    14014
+PIT    12663
+CHI    12642
+NE     11862
+TEN    11798
+LAC    11164
+NYG    10829
+GB     10499
+TB     10447
+IND    10310
+DAL    10292
+JAX    10180
+SEA    10105
+SF      9873
+BUF     9859
+LA      9452
+PHI     9112
+CLE     8721
+LV      8669
+WAS     8462
+DET     8333
+KC      8333
+CIN     8161
+NO      8004
+ATL     7728
+CAR     7171
+MIA     7035
+LAR     6965
+NYJ     6583
+MIN     5895
+DEN     5881
+BAL     5793
+
+[    2.4s] ==== load combine_tracking.csv (full) ====
+shape: (463189, 14)
+drill_type value_counts:
+drill_type
+SKILL_DRILLS_WR     120383
+SKILL_DRILLS_DB      94623
+SKILL_DRILLS_DL      77428
+SKILL_DRILLS_OL      61129
+FORTY_YARD_DASH      41500
+SKILL_DRILLS_TE      37222
+THREE_CONE_DRILL     15951
+SHORT_SHUTTLE        11690
+SKILL_DRILLS_LB       3263
+drill_name value_counts:
+drill_name
+FORTY_YARD_DASH                                 41500
+GAUNTLET_DRILL                                  38228
+BACK_PEDAL_AND_TRANSITION_45_DEGREE_REACTION    21569
+FIVE_YARD_WAVE_DRILL_SLIDE_AND_SHUFFLE          18087
+THREE_CONE_DRILL                                15951
+FRONT_START_WAVE_DRILL_AND_LATERAL_REACTION     12845
+OVER_SHOULDER_ADJUST                            12149
+LINE_DRILL                                      11895
+FOUR_BAG_AGILITY_DRILL                          11709
+SHORT_SHUTTLE                                   11690
+PASS_RUSH_DROP                                  10752
+POST_CORNER_ROUTE_RIGHT                         10517
+PASS_RUSH_DRILL                                 10285
+W_DRILL                                         10214
+DAGGER_ROUTE_LEFT                                9917
+GO_ROUTE_RIGHT                                   9843
+SLOT_SAIL_ROUTE_RIGHT                            9524
+TERYL_AUSTIN_DRILL_2                             9514
+BOX_DRILL                                        9439
+COMEBACK_ROUTE_RIGHT                             9266
+RUN_THE_HOOP_DRILL                               9120
+SHORT_ZONE_BREAKS                                9044
+SLOT_STRIKE_ROUTE_LEFT                           8457
+BACK_PEDAL_AND_90_DEGREE_BREAK_TO_BALL           8422
+RUN_AND_CLUB_DRILL                               8180
+SCREEN_DRILL                                     8031
+CURL_ROUTE_RIGHT                                 7993
+TERYL_AUSTIN_DRILL_1                             7765
+PASS_PRO-MIRROR_DRILL                            7020
+BODY_CONTROL_DRILL                               6611
+BACK_PEDAL_AND_REACT                             6505
+CORNER_ROUTE                                     6467
+RED_ZONE_FADE_RIGHT                              6256
+SPEED_OUT_ROUTE_LEFT                             5619
+SLANT_ROUTE_LEFT                                 5320
+CIRCUS_ROUTE_LEFT                                4739
+OL_PULL_DRILL_LONG_PULL_RIGHT                    4720
+OL_PULL_DRILL_FOLD_BLOCK_RIGHT                   4706
+OL_PULL_DRILL_DEEP_SHORT_PULL_LEFT               4412
+POST_CORNER_ROUTE_LEFT                           4289
+HOOK_ROUTE_RIGHT                                 3986
+IN_ROUTE_LEFT                                    3842
+LINE                                             3552
+PASS_PRO_MIRROR_DRILL                            3401
+WHEEL_ROUTE_LEFT                                 3323
+FLAT_ROUTE_LEFT                                  3066
+SHORT_ZONE_BREAK_FLAT_WHEEL                      2374
+BLOCK_EXPLOSION                                  2330
+END_ZONE_FADE_RIGHT                              2290
+SPEED_OUT_LEFT                                   1675
+SHORT_ZONE_BREAK_INSIDE                          1534
+SHORT_ZONE_BREAK_FORWARD                         1256
+OVER_THE_SHOULDER_ADJUST                          762
+WAVE_DRILL                                        477
+SHUFFLE_SPRINT_AND_COD_DRILL                      386
+FOUR_BAG_SHUFFLE_DRILL                            365
+unique players: 510, unique events: 6310
+missing per column:
+draft_year     0
+event_id       0
+nfl_id         0
+entity_type    0
+time           0
+drill_type     0
+drill_name     0
+attempt        0
+x              0
+y              0
+s              0
+a              0
+dis            0
+dir            0
+entity_type value_counts:
+entity_type
+PLAYER    431094
+BALL       32095
+
+[    3.4s] ==== raw line count game_tracking_2023.csv ====
+total rows (excl header): 3,665,443
+
+[    3.6s] ==== sample 200k rows of game_tracking_2023.csv ====
+sample shape: (200000, 12)
+dtypes:
+game_id      int64
+play_id      int64
+nfl_id       int64
+time           str
+x          float64
+y          float64
+s          float64
+a          float64
+dis        float64
+o          float64
+dir        float64
+event          str
+event value_counts (sample):
+event
+ball_snap                    2802
+pass_forward                 1734
+tackle                       1551
+first_contact                1541
+pass_arrived                 1303
+pass_outcome_caught          1019
+handoff                       781
+pass_outcome_incomplete       631
+play_action                   472
+out_of_bounds                 350
+autoevent_passinterrupted     236
+run                           143
+qb_sack                       109
+man_in_motion                 107
+line_set                       79
+time min/max (sample): 2023-08-04T00:54:41.000 .. 2024-02-12T02:47:50.600
+missing per column (sample):
+game_id         0
+play_id         0
+nfl_id          0
+time            0
+x               0
+y               0
+s               0
+a               0
+dis             0
+o               0
+dir             0
+event      186675
+
+[    3.9s] ==== chunked unique aggregation game_tracking_2023.csv ====
+  ... processed 3,000,000 rows
+  ... processed 3,665,443 rows
+2023: rows=3,665,443 unique_games=333 unique_plays=4649 unique_players=156
+
+[    6.8s] ==== raw line count game_tracking_2024.csv ====
+total rows (excl header): 7,827,944
+
+[    7.7s] ==== sample 200k rows of game_tracking_2024.csv ====
+sample shape: (200000, 12)
+dtypes:
+game_id      int64
+play_id      int64
+nfl_id       int64
+time           str
+x          float64
+y          float64
+s          float64
+a          float64
+dis        float64
+o          float64
+dir        float64
+event          str
+event value_counts (sample):
+event
+ball_snap                    2774
+pass_forward                 1644
+first_contact                1639
+tackle                       1624
+pass_arrived                 1243
+pass_outcome_caught          1023
+handoff                       833
+pass_outcome_incomplete       545
+play_action                   449
+out_of_bounds                 330
+autoevent_passinterrupted     234
+run                           140
+qb_sack                       125
+line_set                       81
+touchdown                      73
+time min/max (sample): 2024-08-02T00:19:27.900 .. 2025-02-10T03:01:21.200
+missing per column (sample):
+game_id         0
+play_id         0
+nfl_id          0
+time            0
+x               0
+y               0
+s               0
+a               0
+dis             0
+o               0
+dir             0
+event      186711
+
+[    8.0s] ==== chunked unique aggregation game_tracking_2024.csv ====
+  ... processed 3,000,000 rows
+  ... processed 6,000,000 rows
+  ... processed 7,827,944 rows
+2024: rows=7,827,944 unique_games=334 unique_plays=4719 unique_players=318
+
+[   14.6s] ==== raw line count game_tracking_2025.csv ====
+total rows (excl header): 11,160,903
+
+[   15.8s] ==== sample 200k rows of game_tracking_2025.csv ====
+sample shape: (200000, 12)
+dtypes:
+game_id      int64
+play_id      int64
+nfl_id       int64
+time           str
+x          float64
+y          float64
+s          float64
+a          float64
+dis        float64
+o          float64
+dir        float64
+event          str
+event value_counts (sample):
+event
+ball_snap                    2779
+pass_forward                 1658
+first_contact                1635
+tackle                       1629
+pass_arrived                 1250
+pass_outcome_caught           983
+handoff                       837
+pass_outcome_incomplete       602
+play_action                   495
+out_of_bounds                 289
+autoevent_passinterrupted     219
+run                           118
+qb_sack                       110
+man_in_motion                 104
+line_set                       86
+time min/max (sample): 2025-08-01T00:13:30.200 .. 2026-02-09T03:21:50.400
+missing per column (sample):
+game_id         0
+play_id         0
+nfl_id          0
+time            0
+x               0
+y               0
+s               0
+a               0
+dis             0
+o               0
+dir             0
+event      186688
+
+[   16.1s] ==== chunked unique aggregation game_tracking_2025.csv ====
+  ... processed 3,000,000 rows
+  ... processed 6,000,000 rows
+  ... processed 9,000,000 rows
+  ... processed 11,160,903 rows
+2025: rows=11,160,903 unique_games=334 unique_plays=4746 unique_players=448

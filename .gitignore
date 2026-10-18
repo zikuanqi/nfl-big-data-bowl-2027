@@ -1,0 +1,30 @@
+# raw competition data (2.2 GB) and archive
+nfl-big-data-bowl-2027/
+nfl-big-data-bowl-2027.zip
+
+# intermediate play-level dataset (regenerable, 31 MB)
+features/analysis_play_level.csv
+
+# local scratch / generated
+kernels/
+kernel_check/
+kernel_logs/
+figs_dataset/
+/figs/
+__pycache__/
+.ipynb_checkpoints/
+*.log
+catboost_info/
+
+# API probing scratch scripts
+probe_rpc.py
+probe_submit.py
+probe_writeup_create.py
+inspect_api.py
+inspect_writeup_api.py
+create_figs_dataset.py
+
+# fetched competition page snapshots
+kaggle_page_*.md
+kaggle_*.html
+kaggle_*.json

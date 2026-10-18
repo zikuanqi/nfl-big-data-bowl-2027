@@ -1,0 +1,487 @@
+{
+  "L1": {
+    "n_plays": 28830,
+    "r2_full": 0.2796374614240017,
+    "r2_movement_only": 0.09219524123562273,
+    "r2_controls_only": 0.2782916275018341,
+    "coef_table": [
+      {
+        "feature": "decel_into_cut_max_z",
+        "coef": -0.0014,
+        "ci_lo": -0.0211,
+        "ci_hi": 0.0158,
+        "sig": false
+      },
+      {
+        "feature": "accel_out_cut_mean_z",
+        "coef": 0.0107,
+        "ci_lo": -0.0049,
+        "ci_hi": 0.0274,
+        "sig": false
+      },
+      {
+        "feature": "retention_mean_z",
+        "coef": -0.0079,
+        "ci_lo": -0.0271,
+        "ci_hi": 0.0103,
+        "sig": false
+      },
+      {
+        "feature": "retention_min_z",
+        "coef": 0.001,
+        "ci_lo": -0.0167,
+        "ci_hi": 0.0208,
+        "sig": false
+      },
+      {
+        "feature": "cut_angle_max_z",
+        "coef": 0.0399,
+        "ci_lo": 0.0157,
+        "ci_hi": 0.0631,
+        "sig": true
+      },
+      {
+        "feature": "cut_angle_mean_z",
+        "coef": -0.0422,
+        "ci_lo": -0.0748,
+        "ci_hi": -0.0046,
+        "sig": true
+      },
+      {
+        "feature": "speed_max_z",
+        "coef": 0.008,
+        "ci_lo": -0.0079,
+        "ci_hi": 0.0236,
+        "sig": false
+      },
+      {
+        "feature": "speed_mean_z",
+        "coef": -0.0103,
+        "ci_lo": -0.0396,
+        "ci_hi": 0.021,
+        "sig": false
+      },
+      {
+        "feature": "speed_cv_z",
+        "coef": -0.0205,
+        "ci_lo": -0.0395,
+        "ci_hi": -0.0064,
+        "sig": true
+      },
+      {
+        "feature": "turn_total_z",
+        "coef": 0.0331,
+        "ci_lo": -0.0067,
+        "ci_hi": 0.0754,
+        "sig": false
+      },
+      {
+        "feature": "cod_index_z",
+        "coef": -0.0227,
+        "ci_lo": -0.0611,
+        "ci_hi": 0.0164,
+        "sig": false
+      },
+      {
+        "feature": "dec_peak_z",
+        "coef": -0.0117,
+        "ci_lo": -0.0195,
+        "ci_hi": -0.0005,
+        "sig": true
+      },
+      {
+        "feature": "acc_peak_z",
+        "coef": -0.0047,
+        "ci_lo": -0.0158,
+        "ci_hi": 0.0065,
+        "sig": false
+      },
+      {
+        "feature": "dur_s_z",
+        "coef": -0.0087,
+        "ci_lo": -0.0249,
+        "ci_hi": 0.0103,
+        "sig": false
+      },
+      {
+        "feature": "dist_total_z",
+        "coef": 0.0082,
+        "ci_lo": -0.0141,
+        "ci_hi": 0.0271,
+        "sig": false
+      },
+      {
+        "feature": "cut_dur_mean_z",
+        "coef": 0.0079,
+        "ci_lo": -0.0156,
+        "ci_hi": 0.0294,
+        "sig": false
+      },
+      {
+        "feature": "n_cuts_z",
+        "coef": -0.005,
+        "ci_lo": -0.024,
+        "ci_hi": 0.0158,
+        "sig": false
+      },
+      {
+        "feature": "speed_trough_z",
+        "coef": -0.0123,
+        "ci_lo": -0.0461,
+        "ci_hi": 0.0175,
+        "sig": false
+      },
+      {
+        "feature": "speed_loss_z",
+        "coef": -0.037,
+        "ci_lo": -0.1018,
+        "ci_hi": 0.0224,
+        "sig": false
+      },
+      {
+        "feature": "speed_loss_ratio_z",
+        "coef": 0.0257,
+        "ci_lo": -0.0295,
+        "ci_hi": 0.0885,
+        "sig": false
+      },
+      {
+        "feature": "decel_dist_z",
+        "coef": -0.0083,
+        "ci_lo": -0.0306,
+        "ci_hi": 0.0104,
+        "sig": false
+      },
+      {
+        "feature": "post_trough_accel_z",
+        "coef": -0.0137,
+        "ci_lo": -0.0365,
+        "ci_hi": 0.0045,
+        "sig": false
+      },
+      {
+        "feature": "man",
+        "coef": -0.3802,
+        "ci_lo": -0.3969,
+        "ci_hi": -0.3613,
+        "sig": true
+      },
+      {
+        "feature": "log_cushion",
+        "coef": 0.3656,
+        "ci_lo": 0.3485,
+        "ci_hi": 0.3837,
+        "sig": true
+      },
+      {
+        "feature": "target_f",
+        "coef": 0.1333,
+        "ci_lo": 0.1147,
+        "ci_hi": 0.1527,
+        "sig": true
+      },
+      {
+        "feature": "slot",
+        "coef": 0.0659,
+        "ci_lo": 0.0488,
+        "ci_hi": 0.0795,
+        "sig": true
+      },
+      {
+        "feature": "down",
+        "coef": -0.0142,
+        "ci_lo": -0.0216,
+        "ci_hi": -0.007,
+        "sig": true
+      },
+      {
+        "feature": "yards_to_go",
+        "coef": 0.0096,
+        "ci_lo": 0.0084,
+        "ci_hi": 0.0111,
+        "sig": true
+      },
+      {
+        "feature": "quarter",
+        "coef": 0.0143,
+        "ci_lo": 0.0104,
+        "ci_hi": 0.0191,
+        "sig": true
+      },
+      {
+        "feature": "draft_year",
+        "coef": 0.0006,
+        "ci_lo": -0.015,
+        "ci_hi": 0.0178,
+        "sig": false
+      },
+      {
+        "feature": "draft_pick_f",
+        "coef": 0.0001,
+        "ci_lo": -0.0001,
+        "ci_hi": 0.0003,
+        "sig": false
+      },
+      {
+        "feature": "udfa",
+        "coef": -0.0188,
+        "ci_lo": -0.0774,
+        "ci_hi": 0.0239,
+        "sig": false
+      },
+      {
+        "feature": "rt_FLAT",
+        "coef": 0.2533,
+        "ci_lo": 0.2207,
+        "ci_hi": 0.2841,
+        "sig": true
+      },
+      {
+        "feature": "rt_GO",
+        "coef": -0.2514,
+        "ci_lo": -0.2812,
+        "ci_hi": -0.2156,
+        "sig": true
+      },
+      {
+        "feature": "rt_HITCH",
+        "coef": -0.16,
+        "ci_lo": -0.1888,
+        "ci_hi": -0.1235,
+        "sig": true
+      },
+      {
+        "feature": "rt_OUT",
+        "coef": -0.1687,
+        "ci_lo": -0.1918,
+        "ci_hi": -0.1329,
+        "sig": true
+      },
+      {
+        "feature": "rt_POST_CORNER",
+        "coef": -0.1647,
+        "ci_lo": -0.1967,
+        "ci_hi": -0.1328,
+        "sig": true
+      },
+      {
+        "feature": "rt_SCREEN",
+        "coef": 0.5646,
+        "ci_lo": 0.5302,
+        "ci_hi": 0.6078,
+        "sig": true
+      },
+      {
+        "feature": "rt_SLANT",
+        "coef": -0.1348,
+        "ci_lo": -0.1649,
+        "ci_hi": -0.0952,
+        "sig": true
+      },
+      {
+        "feature": "rt_WHEEL",
+        "coef": 0.0616,
+        "ci_lo": -0.1203,
+        "ci_hi": 0.1877,
+        "sig": false
+      }
+    ]
+  },
+  "L2": {
+    "n_rows": 494,
+    "n_players": 105,
+    "r2_movement_only": 0.19123455249636756,
+    "r2_controls_only": 0.4254347338354062,
+    "coef_table": [
+      {
+        "feature": "decel_into_cut_max_z",
+        "coef": 0.0037,
+        "ci_lo": -0.0146,
+        "ci_hi": 0.0184,
+        "sig": false
+      },
+      {
+        "feature": "accel_out_cut_mean_z",
+        "coef": 0.0141,
+        "ci_lo": -0.0051,
+        "ci_hi": 0.0319,
+        "sig": false
+      },
+      {
+        "feature": "retention_mean_z",
+        "coef": 0.002,
+        "ci_lo": -0.0182,
+        "ci_hi": 0.0257,
+        "sig": false
+      },
+      {
+        "feature": "retention_min_z",
+        "coef": -0.0064,
+        "ci_lo": -0.0272,
+        "ci_hi": 0.0155,
+        "sig": false
+      },
+      {
+        "feature": "cut_angle_max_z",
+        "coef": 0.0545,
+        "ci_lo": 0.0183,
+        "ci_hi": 0.0754,
+        "sig": true
+      },
+      {
+        "feature": "cut_angle_mean_z",
+        "coef": -0.0348,
+        "ci_lo": -0.0611,
+        "ci_hi": 0.0128,
+        "sig": false
+      },
+      {
+        "feature": "speed_max_z",
+        "coef": 0.0101,
+        "ci_lo": -0.011,
+        "ci_hi": 0.0285,
+        "sig": false
+      },
+      {
+        "feature": "speed_mean_z",
+        "coef": 0.0025,
+        "ci_lo": -0.0325,
+        "ci_hi": 0.0415,
+        "sig": false
+      },
+      {
+        "feature": "speed_cv_z",
+        "coef": -0.0353,
+        "ci_lo": -0.0596,
+        "ci_hi": -0.0125,
+        "sig": true
+      },
+      {
+        "feature": "turn_total_z",
+        "coef": 0.021,
+        "ci_lo": -0.0229,
+        "ci_hi": 0.0639,
+        "sig": false
+      },
+      {
+        "feature": "cod_index_z",
+        "coef": -0.0209,
+        "ci_lo": -0.0546,
+        "ci_hi": 0.0234,
+        "sig": false
+      },
+      {
+        "feature": "dec_peak_z",
+        "coef": -0.0116,
+        "ci_lo": -0.0228,
+        "ci_hi": 0.0039,
+        "sig": false
+      },
+      {
+        "feature": "acc_peak_z",
+        "coef": -0.0104,
+        "ci_lo": -0.0242,
+        "ci_hi": 0.0039,
+        "sig": false
+      },
+      {
+        "feature": "dur_s_z",
+        "coef": 0.002,
+        "ci_lo": -0.0194,
+        "ci_hi": 0.0271,
+        "sig": false
+      },
+      {
+        "feature": "dist_total_z",
+        "coef": -0.0027,
+        "ci_lo": -0.0289,
+        "ci_hi": 0.0263,
+        "sig": false
+      },
+      {
+        "feature": "cut_dur_mean_z",
+        "coef": -0.0012,
+        "ci_lo": -0.0246,
+        "ci_hi": 0.0183,
+        "sig": false
+      },
+      {
+        "feature": "n_cuts_z",
+        "coef": -0.0187,
+        "ci_lo": -0.0431,
+        "ci_hi": 0.0013,
+        "sig": false
+      },
+      {
+        "feature": "speed_trough_z",
+        "coef": -0.0218,
+        "ci_lo": -0.0556,
+        "ci_hi": 0.0092,
+        "sig": false
+      },
+      {
+        "feature": "speed_loss_z",
+        "coef": -0.0474,
+        "ci_lo": -0.0748,
+        "ci_hi": 0.0062,
+        "sig": false
+      },
+      {
+        "feature": "speed_loss_ratio_z",
+        "coef": 0.0478,
+        "ci_lo": -0.0067,
+        "ci_hi": 0.0708,
+        "sig": false
+      },
+      {
+        "feature": "decel_dist_z",
+        "coef": -0.0328,
+        "ci_lo": -0.0587,
+        "ci_hi": -0.0076,
+        "sig": true
+      },
+      {
+        "feature": "post_trough_accel_z",
+        "coef": -0.0243,
+        "ci_lo": -0.0427,
+        "ci_hi": -0.0049,
+        "sig": true
+      },
+      {
+        "feature": "rt_GO",
+        "coef": -0.1123,
+        "ci_lo": -0.1299,
+        "ci_hi": -0.0921,
+        "sig": true
+      },
+      {
+        "feature": "rt_HITCH",
+        "coef": 0.0591,
+        "ci_lo": 0.0394,
+        "ci_hi": 0.0755,
+        "sig": true
+      },
+      {
+        "feature": "rt_OUT",
+        "coef": 0.0772,
+        "ci_lo": 0.0549,
+        "ci_hi": 0.1007,
+        "sig": true
+      },
+      {
+        "feature": "rt_POST_CORNER",
+        "coef": 0.0267,
+        "ci_lo": 0.0092,
+        "ci_hi": 0.0419,
+        "sig": true
+      },
+      {
+        "feature": "rt_SLANT",
+        "coef": -0.0507,
+        "ci_lo": -0.0761,
+        "ci_hi": -0.0192,
+        "sig": true
+      }
+    ]
+  }
+}
